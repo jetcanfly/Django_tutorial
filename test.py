@@ -2,43 +2,24 @@ __author__ = 'jet'
 import sys
 import os
 
-class Singleton(object):
-    def __new__(cls):
-        # 关键在于这，每一次实例化的时候，我们都只会返回这同一个instance对象
-        if not hasattr(cls, 'instance'):
-            cls.instance = super(Singleton, cls).__new__(cls)
-        return cls.instance
+import re
 
-print(hasattr(Singleton, 'test'))
-Singleton.test = 1
-print(hasattr(Singleton, 'test'))
-obj1 = Singleton()
-obj2 = Singleton()
+p = re.compile(r'(\w+) (\w+)')
+s = 'i say, hello world!'
 
+print(p.sub(r'\2 \1', s))
 
-def total(a=5, *numbers, **phonebook):
-    print('a', a)
-    for single_item in numbers:
-        print('single_item', single_item)
-    for first_part, second_part in phonebook.items():
-        print(first_part,second_part)
+st = 'abc\r\nFirstPage '
+# r = re.compile(r'\b(([A-Z]+[a-z]+){2,})\b')
+r = re.compile(r'\b((\w+){,3})\b')
+test1 = '\r\nbc!df!'
+test1_r = re.compile(r'\b(\w+)\b')
+re1 = test1_r.search(test1)
+re3 = test1_r.sub(r'test\1test', test1)
+test2 = ''
+re2 = r.findall(st)
+content = r.sub(r'\0', st)
 
-total(10)
-total(10, 1, 2, 3)
-a = (1, 2)
+print('123')
 
-def test(para, func=None):
-    print("what we got is {}".format(para))
-    print("resutl {}".format(func(para))) if func is not None else None
-
-test(1)
-test(2, lambda x: x*x)
-a = '123'
-b = '12' + '3'
-print(a == b)
-print(a is b)
-
-
-p = sys.path
-print(os.path)
 

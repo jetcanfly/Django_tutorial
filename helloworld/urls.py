@@ -20,7 +20,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 ]
 
-from django.conf.urls import url
+from django.conf.urls import url, include
 from django.contrib import admin
 from . import helloworld, add, list
 urlpatterns = [
@@ -28,4 +28,5 @@ urlpatterns = [
     url(r'^$', helloworld.index),
     url(r'^add/$', add.index),
     url(r'^list/$', list.index),
+    url(r'^wiki/', include('wiki.urls')),
 ]

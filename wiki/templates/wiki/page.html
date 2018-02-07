@@ -1,0 +1,8 @@
+<h2>{{ pagename }}</h2>
+<p>{{ content|safe }}</p>
+<hr/>
+<p>
+<form method="POST" action="/wiki/{{ pagename }}/edit/">
+
+<input type="submit" value="edit">
+</form></p>
