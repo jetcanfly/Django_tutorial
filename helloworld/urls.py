@@ -29,4 +29,5 @@ urlpatterns = [
     url(r'^add/$', add.index),
     url(r'^list/$', list.index),
     url(r'^wiki/', include('wiki.urls')),
+    url(r'^address/', include('address.urls')),
 ]

@@ -1,0 +1,20 @@
+<h1>Address list</h1>
+<hr>
+<table border="1">
+<tr>
+<th>name</th>
+<th>gender</th>
+<th>telephone</th>
+<th>mobilephone</th>
+<th>room</th>
+</tr>
+{% for person in address_list %}
+    <tr>
+    <td>{{ person.name }}</td>
+    <td>{{ person.gender }}</td>
+    <td>{{ person.telphone }}</td>
+    <td>{{ person.mobile }}</td>
+    <td>{{ person.room }}</td>
+    </tr>
+{% endfor %}
+</table>
