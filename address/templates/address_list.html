@@ -1,20 +1,26 @@
-<h1>Address list</h1>
+<h1 id="title">list address</h1>
 <hr>
+<form enctype="multipart/form-data" method="POST" action="/address/upload/">
+upload list address file(.csv)： <input type="file" name="file"/><br/>
+<input type="submit" value="upload"/>
+</form>
+<hr>
+<p><a href="/address/output/">导出为csv格式文件</a></p>
 <table border="1">
 <tr>
 <th>name</th>
 <th>gender</th>
-<th>telephone</th>
-<th>mobilephone</th>
+<th>tel</th>
+<th>mobile</th>
 <th>room</th>
 </tr>
 {% for person in address_list %}
-    <tr>
-    <td>{{ person.name }}</td>
-    <td>{{ person.gender }}</td>
-    <td>{{ person.telphone }}</td>
-    <td>{{ person.mobile }}</td>
-    <td>{{ person.room }}</td>
-    </tr>
+<tr>
+<td>{{ person.name }}</td>
+<td>{{ person.gender }}</td>
+<td>{{ person.telphone }}</td>
+<td>{{ person.mobile }}</td>
+<td>{{ person.room }}</td>
+</tr>
 {% endfor %}
 </table>
